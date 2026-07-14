@@ -304,38 +304,14 @@
 </footer>
 
 <a href="https://wa.me/919319001214" target="_blank" class="float-btn whatsapp">💬</a>
-
+<div class="float-buttons">
+  <a href="tel:+919319001214" class="float-btn probot"><span class="float-btn-icon">&#128222;</span><span>Call Us</span></a>
+  <a href="https://wa.me/919319001214?text=Hi%20Pro%20India" target="_blank" rel="noopener" class="float-btn whatsapp"><span class="float-btn-icon">&#128172;</span><span>WhatsApp Us</span></a>
+</div>
 <script>
-function filterCat(cat, el) {
-  const tabs = document.querySelectorAll('.cat-tab');
-  tabs.forEach(t => t.classList.remove('active'));
-  if (el) el.classList.add('active');
-  const posts = document.querySelectorAll('#postsGrid .post-card');
-  posts.forEach(p => {
-    if (cat === 'all' || p.dataset.cat === cat) {
-      p.style.display = '';
-    } else {
-      p.style.display = 'none';
-    }
-  });
-}
-function filterPosts() {
-  const q = document.getElementById('searchInput').value.toLowerCase();
-  const posts = document.querySelectorAll('#postsGrid .post-card');
-  posts.forEach(p => {
-    const text = p.textContent.toLowerCase();
-    p.style.display = text.includes(q) ? '' : 'none';
-  });
-}
-function subscribeNL() {
-  const name = document.getElementById('nlName').value;
-  const email = document.getElementById('nlEmail').value;
-  if (!email) return;
-  fetch('https://flow.zoho.in/YOUR_ZOHO_FLOW_WEBHOOK_URL', {
-    method: 'POST',
-    headers: {'Content-Type': 'application/json'},
-    mode: 'no-cors',
-    body: JSON.stringify({name, email, source: 'Blog Newsletter Sidebar', interest: 'Newsletter'})
-  }).catch(() => {});
-  document.getElementById('nlSuccess').style.display = 'block';
-  document.getElementById('nl
+window.addEventListener("scroll",function(){var n=document.getElementById("mainNav");if(n)n.classList.toggle("scrolled",window.scrollY>20);});
+var _mt=document.getElementById("mobileToggle");if(_mt)_mt.addEventListener("click",function(){var l=document.getElementById("navLinks");if(l)l.classList.toggle("open");});
+</script>
+<script defer src="probot.js"></script>
+</body>
+</html>

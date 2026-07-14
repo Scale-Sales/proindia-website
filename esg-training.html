@@ -1047,81 +1047,35 @@
 <a href="https://wa.me/919319001214?text=Hi!%20I%20want%20to%20know%20more%20about%20Pro%20India%20ESG%20Training" class="wa-float" title="Chat on WhatsApp" aria-label="WhatsApp">
   <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
-
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-name">Pro India</div>
+        <p class="footer-brand-tagline">CPCB Registered PRO. India's trusted ESG, EPR & Sustainability partner since 2018.</p>
+        <p style="font-size:0.875rem;margin-bottom:16px;">&#128222; +91-9319001214<br>&#9993; info@proindia.net</p>
+        <div class="footer-socials">
+          <a href="https://www.linkedin.com/company/proindiasolutions" target="_blank" rel="noopener" class="footer-social">in</a>
+          <a href="https://www.youtube.com/@proindia8910" target="_blank" rel="noopener" class="footer-social">&#9654;</a>
+          <a href="https://www.instagram.com/proindiasolutions/" target="_blank" rel="noopener" class="footer-social">&#128247;</a>
+        </div>
+      </div>
+      <div><div class="footer-col-title">Services</div><nav class="footer-links"><a href="esg-services.html">ESG Services</a><a href="epr-compliance.html">EPR Compliance</a><a href="esg-training.html">ESG Training</a><a href="msme-support.html">MSME Support</a><a href="franchise.html">Franchise</a></nav></div>
+      <div><div class="footer-col-title">Knowledge</div><nav class="footer-links"><a href="knowledge.html">Blog &amp; Articles</a><a href="knowledge.html#calculators">Calculators</a><a href="knowledge.html#news">News</a></nav></div>
+      <div><div class="footer-col-title">Company</div><nav class="footer-links"><a href="about.html">About Us</a><a href="franchise.html">Franchise</a><a href="knowledge.html">Blog</a><a href="contact.html">Contact</a></nav></div>
+      <div><div class="footer-col-title">Legal</div><nav class="footer-links"><a href="privacy-policy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a><a href="refund-policy.html">Refund Policy</a></nav></div>
+    </div>
+    <div class="footer-bottom"><p>&copy; 2026 Pro India. All rights reserved. | CPCB Registered PRO</p><div class="footer-bottom-links"><a href="privacy-policy.html">Privacy</a><a href="terms.html">Terms</a></div></div>
+  </div>
+</footer>
+<div class="float-buttons">
+  <a href="tel:+919319001214" class="float-btn probot"><span class="float-btn-icon">&#128222;</span><span>Call Us</span></a>
+  <a href="https://wa.me/919319001214?text=Hi%20Pro%20India" target="_blank" rel="noopener" class="float-btn whatsapp"><span class="float-btn-icon">&#128172;</span><span>WhatsApp Us</span></a>
+</div>
 <script>
-// ── TAB SWITCHING ──
-function showTab(tab) {
-  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-  document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
-  document.getElementById('tab-' + tab).classList.add('active');
-  document.getElementById('pane-' + tab).classList.add('active');
-  history.replaceState(null, '', '#' + tab);
-}
-
-// ── URL HASH ROUTING ──
-document.addEventListener('DOMContentLoaded', function() {
-  var hash = location.hash.replace('#', '');
-  var validTabs = {
-    'students': 'students', 'student': 'students',
-    'executives': 'executives', 'executive': 'executives',
-    'corporate': 'corporate', 'msme': 'corporate',
-    'specialized': 'specialized', 'iimb': 'specialized', 'epd': 'specialized',
-    'ambassador': 'ambassador', 'campus-ambassador': 'ambassador', 'campus': 'ambassador'
-  };
-  if (hash && validTabs[hash]) showTab(validTabs[hash]);
-
-  // ── ANIMATED STAT COUNTERS ──
-  var counters = document.querySelectorAll('.stat-num[data-target]');
-  var observer = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
-      if (entry.isIntersecting) {
-        var el = entry.target;
-        var target = parseInt(el.getAttribute('data-target'));
-        var start = 0;
-        var duration = 1200;
-        var step = Math.ceil(target / (duration / 16));
-        var timer = setInterval(function() {
-          start += step;
-          if (start >= target) { start = target; clearInterval(timer); }
-          el.textContent = start + (target >= 100 ? '+' : '');
-        }, 16);
-        observer.unobserve(el);
-      }
-    });
-  }, { threshold: 0.5 });
-  counters.forEach(function(c) { observer.observe(c); });
-});
-
-// ── FORM SUBMISSIONS ──
-function submitEnroll(e) {
-  e.preventDefault();
-  var form = e.target;
-  var data = {};
-  new FormData(form).forEach(function(v, k) { data[k] = v; });
-  data.form_type = 'esg_enroll';
-  fetch('https://flow.zoho.in/YOUR_ZOHO_FLOW_WEBHOOK_URL', {
-    method: 'POST', mode: 'no-cors',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(data)
-  });
-  if (typeof dataLayer !== 'undefined') {
-    dataLayer.push({ event: 'esg_enroll_submit', program: data.program, city: data.city });
-  }
-  form.innerHTML = '<div style="text-align:center;padding:2rem"><div style="font-size:2.5rem">🎉</div><h3 style="color:#0d3b2e;margin:.5rem 0">Application Received!</h3><p style="color:#555">Our team will contact you within 24 hours. WhatsApp us at <a href="https://wa.me/919319001214" style="color:#1db954">+91 93190 01214</a> for faster response.</p></div>';
-}
-
-function submitAmbassador(e) {
-  e.preventDefault();
-  var form = e.target;
-  var data = {};
-  new FormData(form).forEach(function(v, k) { data[k] = v; });
-  data.form_type = 'campus_ambassador';
-  fetch('https://flow.zoho.in/YOUR_ZOHO_FLOW_WEBHOOK_URL', {
-    method: 'POST', mode: 'no-cors',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(data)
-  });
-  if (typeof dataLayer !== 'undefined') {
-    dataLayer.push({ event: 'ambassador_apply', college: data.college, city: data.city });
-  }
-  form.innerHTML = '<div style="text-align:center;padding:2rem"><div style="font-size:2.5rem">🌱</div><h3 style="color:#0d3b2e;margin:.5rem 0">Application Submitted!</h3><p style="color:#555">Welcome to the Pro India Campus Ambassador family! We\'ll review your ap
+window.addEventListener("scroll",function(){var n=document.getElementById("mainNav");if(n)n.classList.toggle("scrolled",window.scrollY>20);});
+var _mt=document.getElementById("mobileToggle");if(_mt)_mt.addEventListener("click",function(){var l=document.getElementById("navLinks");if(l)l.classList.toggle("open");});
+</script>
+<script defer src="probot.js"></script>
+</body>
+</html>

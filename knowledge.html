@@ -267,5 +267,6 @@ window.addEventListener('scroll', () => { document.getElementById('mainNav').cla
 document.getElementById('mobileToggle').addEventListener('click', () => { document.getElementById('navLinks').classList.toggle('open'); });
 function submitNl(){ const name=document.getElementById('nlName').value,email=document.getElementById('nlEmail').value; if(!email){alert('Please enter your email.');return;} const webhookUrl='https://flow.zoho.in/YOUR_ZOHO_FLOW_WEBHOOK_URL'; fetch(webhookUrl,{method:'POST',headers:{'Content-Type':'application/json'},mode:'no-cors',body:JSON.stringify({name,email,topic:document.getElementById('nlTopic').value,source:'Knowledge Newsletter'})}).catch(()=>{}); document.querySelector('.cta-form').innerHTML='<div style="text-align:center;padding:40px;"><div style="font-size:2.5rem;margin-bottom:16px;">✅</div><div style="font-size:1.1rem;font-weight:700;color:white;">You\'re subscribed!</div><div style="color:rgba(255,255,255,0.75);font-size:0.9rem;margin-top:8px;">Watch your inbox for the next update.</div></div>'; }
 </script>
+<script defer src="probot.js"></script>
 </body>
 </html>

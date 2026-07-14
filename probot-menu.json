@@ -1,0 +1,62 @@
+{
+  "meta": {
+    "name": "Pro India ProBot menu tree",
+    "purpose": "Single source of truth for the website ProBot, the WhatsApp (Gupshup) bot, and the missed-call IVR.",
+    "waNumber": "919319001214",
+    "zohoWebhook": "https://flow.zoho.in/YOUR_ZOHO_FLOW_WEBHOOK_URL",
+    "leadFields": ["name", "email", "whatsapp", "interest", "path", "source"]
+  },
+  "root": {
+    "prompt": "Hi! I'm ProBot. What brings you here?",
+    "options": [
+      { "key": "1", "label": "ESG for my company (B2B)", "goto": "esg" },
+      { "key": "2", "label": "ESG Training / Certification", "goto": "training" },
+      { "key": "3", "label": "EPR Compliance", "goto": "epr" },
+      { "key": "4", "label": "MSME Support & Growth", "goto": "msme" },
+      { "key": "5", "label": "Talk to a Pro India", "action": "lead", "tag": "Talk to a Pro India", "prompt": "We would reach you — please provide your details." }
+    ]
+  },
+  "esg": {
+    "prompt": "ESG for your company - pick one:",
+    "options": [
+      { "key": "1", "label": "Net Zero / Footprinting", "url": "esg-services.html#consultancy", "tag": "ESG Consultancy" },
+      { "key": "2", "label": "BRSR / CBAM / Reporting", "url": "esg-services.html#reporting", "tag": "ESG Reporting" },
+      { "key": "3", "label": "Carbon / Water / Waste Audit", "url": "esg-services.html#audits", "tag": "ESG Audit" },
+      { "key": "4", "label": "Corporate ESG Training", "url": "esg-services.html#training", "tag": "Corporate ESG Training" },
+      { "key": "5", "label": "Book a free ESG assessment", "action": "lead", "tag": "ESG - Book Assessment" },
+      { "key": "0", "label": "Back", "goto": "root" }
+    ]
+  },
+  "training": {
+    "prompt": "Learning & certification - pick one:",
+    "options": [
+      { "key": "1", "label": "Executive ESG Certification", "url": "esg-training.html", "tag": "Exec ESG Cert" },
+      { "key": "2", "label": "Student ESG Program", "url": "esg-training.html#student", "tag": "Student ESG" },
+      { "key": "3", "label": "Coaching & Mentoring (EIR)", "url": "esg-training.html", "tag": "Coaching/EIR" },
+      { "key": "4", "label": "Campus Ambassador", "url": "esg-training.html#student", "tag": "Campus Ambassador" },
+      { "key": "5", "label": "Talk to a Pro India", "action": "lead", "tag": "Training - Advisor" },
+      { "key": "0", "label": "Back", "goto": "root" }
+    ]
+  },
+  "epr": {
+    "prompt": "EPR compliance - what applies to you?",
+    "options": [
+      { "key": "1", "label": "Plastic EPR", "url": "epr-compliance.html#plastic", "tag": "Plastic EPR" },
+      { "key": "2", "label": "E-Waste / Battery / Tyre", "url": "epr-compliance.html#ewaste", "tag": "E-Waste/Battery/Tyre EPR" },
+      { "key": "3", "label": "Check my penalty risk (calculator)", "url": "epr-compliance.html#calculator", "tag": "EPR Calculator" },
+      { "key": "4", "label": "Registration to Annual Filing", "url": "epr-compliance.html", "tag": "EPR Filing" },
+      { "key": "5", "label": "Talk to an EPR expert", "action": "lead", "tag": "EPR - Expert" },
+      { "key": "0", "label": "Back", "goto": "root" }
+    ]
+  },
+  "msme": {
+    "prompt": "MSME support - where can we help?",
+    "options": [
+      { "key": "1", "label": "Supply-Chain Sustainability", "url": "msme-support.html#supply-chain", "tag": "SCM Sustainability" },
+      { "key": "2", "label": "SCALE - Growth & Coaching", "url": "msme-support.html#scale", "tag": "SCALE" },
+      { "key": "3", "label": "Franchising", "url": "franchise.html", "tag": "Franchise" },
+      { "key": "4", "label": "Talk to us about growth", "action": "lead", "tag": "MSME - Growth" },
+      { "key": "0", "label": "Back", "goto": "root" }
+    ]
+  }
+}
