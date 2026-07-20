@@ -91,7 +91,6 @@
   </div>
 </section>
 
-<section class="section" style="padding-top:0;padding-bottom:0;"><div class="container"><img src="https://proindia.net/wp-content/uploads/2018/07/sander-wehkamp-506022-unsplash-e1569047613663.jpg" alt="Pro India EPR — plastic waste compliance" loading="lazy" style="width:100%;height:auto;display:block;border-radius:16px;box-shadow:0 8px 32px rgba(0,0,0,.10);margin-top:-30px;"></div></section>
 <!-- WHAT IS EPR -->
 <section class="section" id="what-is-epr">
   <div class="container">
@@ -137,45 +136,151 @@
   <div class="container">
     <div class="text-center mb-48">
       <span class="label">Coverage</span>
-      <h2 class="section-title">EPR Waste Categories We Cover</h2>
-      <p class="section-subtitle">Pro India handles compliance across all major EPR-regulated waste streams.</p>
+      <h2 class="section-title">EPR waste categories we cover</h2>
+      <p class="section-subtitle">One partner across every EPR-regulated waste stream. Tap a category to see the rule and exactly what we handle.</p>
     </div>
-    <div class="epr-categories">
-      <div class="epr-cat" id="plastic">
-        <div class="epr-cat-icon">🧴</div>
-        <div class="epr-cat-name">Plastic Waste</div>
-        <p class="epr-cat-desc">PWM Rules 2022. Covers all plastic packaging categories — rigid, flexible, MLP, carry bags.</p>
-        <a href="contact.html" class="btn btn-sm btn-primary" style="margin-top:16px;">Get Compliant</a>
+    <style>
+      .pi-tabs{max-width:960px;margin:0 auto}
+      .pi-tabnav{display:flex;gap:6px;background:#e6efe6;border-radius:12px;padding:6px;flex-wrap:wrap;margin-bottom:28px}
+      .pi-tabbtn{flex:1;min-width:130px;padding:.75rem .9rem;border:none;background:transparent;border-radius:8px;font-family:inherit;font-size:.88rem;font-weight:700;color:#4a5a4a;cursor:pointer;transition:.2s;white-space:nowrap}
+      .pi-tabbtn:hover{background:rgba(29,185,84,.12);color:var(--primary)}
+      .pi-tabbtn.active{background:var(--primary);color:#fff;box-shadow:0 2px 10px rgba(13,59,46,.28)}
+      .pi-pane{display:none;animation:piFade .3s ease}
+      .pi-pane.active{display:block}
+      @keyframes piFade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+      .pi-panel{background:var(--white,#fff);border:1px solid var(--border);border-radius:16px;padding:30px}
+      .pi-badge{display:inline-block;background:var(--primary);color:#fff;font-size:.72rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:5px 12px;border-radius:20px;margin-bottom:12px}
+      .pi-panel h3{font-size:1.4rem;font-weight:800;color:var(--primary);margin:0 0 8px}
+      .pi-panel h3 .pi-emoji{margin-right:8px}
+      .pi-panel-sub{color:var(--text-secondary);margin:0 0 20px;max-width:660px}
+      .pi-feat{list-style:none;padding:0;margin:0 0 22px;display:grid;grid-template-columns:1fr 1fr;gap:10px 26px}
+      .pi-feat li{font-size:.92rem;color:var(--text-secondary);padding-left:26px;position:relative;line-height:1.5}
+      .pi-feat li::before{content:"\2713";position:absolute;left:0;top:0;color:var(--secondary);font-weight:800}
+      .pi-cta{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+      @media(max-width:640px){.pi-feat{grid-template-columns:1fr}.pi-tabbtn{min-width:46%;font-size:.82rem}.pi-panel{padding:22px 18px}}
+    </style>
+    <div class="pi-tabs" data-pigroup="epr">
+      <div class="pi-tabnav">
+        <button type="button" class="pi-tabbtn active" data-pikey="plastic">🧴 Plastic</button>
+        <button type="button" class="pi-tabbtn" data-pikey="ewaste">💻 E-Waste</button>
+        <button type="button" class="pi-tabbtn" data-pikey="battery">🔋 Battery</button>
+        <button type="button" class="pi-tabbtn" data-pikey="tyre">🚗 Tyre</button>
+        <button type="button" class="pi-tabbtn" data-pikey="oil">🛢️ Used Oil</button>
+        <button type="button" class="pi-tabbtn" data-pikey="elv">🚙 ELV</button>
       </div>
-      <div class="epr-cat" id="ewaste">
-        <div class="epr-cat-icon">💻</div>
-        <div class="epr-cat-name">E-Waste</div>
-        <p class="epr-cat-desc">E-Waste Rules 2022. For manufacturers and importers of IT, telecom, consumer electronics equipment.</p>
-        <a href="contact.html" class="btn btn-sm btn-primary" style="margin-top:16px;">Get Compliant</a>
+      <div class="pi-pane active" data-pikey="plastic" id="plastic">
+        <div class="pi-panel">
+          <span class="pi-badge">PWM Rules 2022</span>
+          <h3><span class="pi-emoji">🧴</span>Plastic Waste EPR</h3>
+          <p class="pi-panel-sub">All plastic packaging categories — rigid (I), flexible (II), multi-layered/MLP (III) and compostable (IV), plus carry bags.</p>
+          <ul class="pi-feat">
+            <li>EPR registration on the CPCB portal</li>
+            <li>Category-wise recycling target setting</li>
+            <li>Plastic credits sourced via PlasticXChange</li>
+            <li>Quarterly &amp; annual returns filing</li>
+            <li>Verified reprocessor / recycler network</li>
+            <li>Audit &amp; reconciliation support</li>
+          </ul>
+          <div class="pi-cta">
+            <a href="contact.html" class="btn btn-sm btn-primary">Get compliant &rarr;</a>
+            <a href="https://proindia.net/plasticxchange/" target="_blank" rel="noopener" class="btn btn-sm btn-outline">PlasticXChange &rarr;</a>
+          </div>
+        </div>
       </div>
-      <div class="epr-cat" id="battery">
-        <div class="epr-cat-icon">🔋</div>
-        <div class="epr-cat-name">Battery Waste</div>
-        <p class="epr-cat-desc">Battery Waste Management Rules 2022. Lithium-ion, lead-acid, nickel-cadmium, and other battery types.</p>
-        <a href="contact.html" class="btn btn-sm btn-primary" style="margin-top:16px;">Get Compliant</a>
+      <div class="pi-pane" data-pikey="ewaste" id="ewaste">
+        <div class="pi-panel">
+          <span class="pi-badge">E-Waste Rules 2022</span>
+          <h3><span class="pi-emoji">💻</span>E-Waste EPR</h3>
+          <p class="pi-panel-sub">For producers, manufacturers and importers of IT, telecom and consumer-electronics equipment (EEE).</p>
+          <ul class="pi-feat">
+            <li>Producer registration (CPCB EPR portal)</li>
+            <li>EEE code mapping &amp; target setting</li>
+            <li>E-waste EPR credits &amp; dismantler network</li>
+            <li>Annual returns &amp; compliance reports</li>
+            <li>Refurbisher / recycler tie-ups</li>
+            <li>Audit support</li>
+          </ul>
+          <div class="pi-cta">
+            <a href="contact.html" class="btn btn-sm btn-primary">Get compliant &rarr;</a>
+            <a href="https://wa.me/919319001214?text=E-Waste%20EPR%20enquiry" target="_blank" rel="noopener" class="btn btn-sm btn-outline">WhatsApp us</a>
+          </div>
+        </div>
       </div>
-      <div class="epr-cat" id="tyre">
-        <div class="epr-cat-icon">🚗</div>
-        <div class="epr-cat-name">Tyre Waste</div>
-        <p class="epr-cat-desc">Waste Tyre Management Rules. For tyre manufacturers and importers. End-of-life tyre collection and recycling.</p>
-        <a href="contact.html" class="btn btn-sm btn-primary" style="margin-top:16px;">Get Compliant</a>
+      <div class="pi-pane" data-pikey="battery" id="battery">
+        <div class="pi-panel">
+          <span class="pi-badge">Battery Waste Rules 2022</span>
+          <h3><span class="pi-emoji">🔋</span>Battery Waste EPR</h3>
+          <p class="pi-panel-sub">Lithium-ion, lead-acid, nickel-cadmium and other chemistries — for producers and importers.</p>
+          <ul class="pi-feat">
+            <li>Producer registration</li>
+            <li>Chemistry-wise recycling obligations</li>
+            <li>Battery EPR credits</li>
+            <li>Annual returns filing</li>
+            <li>Recycler network</li>
+            <li>Audit &amp; reconciliation</li>
+          </ul>
+          <div class="pi-cta">
+            <a href="contact.html" class="btn btn-sm btn-primary">Get compliant &rarr;</a>
+            <a href="https://wa.me/919319001214?text=Battery%20EPR%20enquiry" target="_blank" rel="noopener" class="btn btn-sm btn-outline">WhatsApp us</a>
+          </div>
+        </div>
       </div>
-      <div class="epr-cat">
-        <div class="epr-cat-icon">🛢️</div>
-        <div class="epr-cat-name">Used Oil</div>
-        <p class="epr-cat-desc">Hazardous Waste Rules. For lubricant and oil manufacturers. Waste oil collection and responsible disposal.</p>
-        <a href="contact.html" class="btn btn-sm btn-primary" style="margin-top:16px;">Get Compliant</a>
+      <div class="pi-pane" data-pikey="tyre" id="tyre">
+        <div class="pi-panel">
+          <span class="pi-badge">Waste Tyre EPR Rules</span>
+          <h3><span class="pi-emoji">🚗</span>Tyre Waste EPR</h3>
+          <p class="pi-panel-sub">For tyre manufacturers and importers — end-of-life tyre collection and recycling.</p>
+          <ul class="pi-feat">
+            <li>Producer registration</li>
+            <li>Obligation &amp; target setting</li>
+            <li>Tyre EPR certificates</li>
+            <li>Recycler / pyrolysis network</li>
+            <li>Annual returns filing</li>
+            <li>Audit support</li>
+          </ul>
+          <div class="pi-cta">
+            <a href="contact.html" class="btn btn-sm btn-primary">Get compliant &rarr;</a>
+            <a href="https://wa.me/919319001214?text=Tyre%20EPR%20enquiry" target="_blank" rel="noopener" class="btn btn-sm btn-outline">WhatsApp us</a>
+          </div>
+        </div>
       </div>
-      <div class="epr-cat">
-        <div class="epr-cat-icon">🚙</div>
-        <div class="epr-cat-name">ELV (End of Life Vehicles)</div>
-        <p class="epr-cat-desc">Automobile manufacturers and importers. End-of-life vehicle dismantling and metal recycling compliance.</p>
-        <a href="contact.html" class="btn btn-sm btn-primary" style="margin-top:16px;">Get Compliant</a>
+      <div class="pi-pane" data-pikey="oil" id="oil">
+        <div class="pi-panel">
+          <span class="pi-badge">Hazardous Waste Rules</span>
+          <h3><span class="pi-emoji">🛢️</span>Used Oil EPR</h3>
+          <p class="pi-panel-sub">For lubricant and oil manufacturers — waste-oil collection and responsible disposal.</p>
+          <ul class="pi-feat">
+            <li>Registration &amp; authorisation</li>
+            <li>Collection mechanism setup</li>
+            <li>Recycler / re-refiner network</li>
+            <li>Returns &amp; documentation</li>
+            <li>Compliance audit</li>
+            <li>Single-window coordination</li>
+          </ul>
+          <div class="pi-cta">
+            <a href="contact.html" class="btn btn-sm btn-primary">Get compliant &rarr;</a>
+            <a href="https://wa.me/919319001214?text=Used%20Oil%20EPR%20enquiry" target="_blank" rel="noopener" class="btn btn-sm btn-outline">WhatsApp us</a>
+          </div>
+        </div>
+      </div>
+      <div class="pi-pane" data-pikey="elv" id="elv">
+        <div class="pi-panel">
+          <span class="pi-badge">ELV Rules</span>
+          <h3><span class="pi-emoji">🚙</span>End-of-Life Vehicles (ELV)</h3>
+          <p class="pi-panel-sub">For automobile manufacturers and importers — ELV dismantling and material recycling compliance.</p>
+          <ul class="pi-feat">
+            <li>Producer registration</li>
+            <li>ELV collection &amp; dismantling network</li>
+            <li>Metal &amp; material recycling compliance</li>
+            <li>Certificates &amp; credits</li>
+            <li>Annual returns filing</li>
+            <li>Audit support</li>
+          </ul>
+          <div class="pi-cta">
+            <a href="contact.html" class="btn btn-sm btn-primary">Get compliant &rarr;</a>
+            <a href="https://wa.me/919319001214?text=ELV%20EPR%20enquiry" target="_blank" rel="noopener" class="btn btn-sm btn-outline">WhatsApp us</a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -219,7 +324,6 @@
   </div>
 </section>
 
-<section class="section bg-light"><div class="container text-center"><span class="label">The Full Cycle</span><h2 class="section-title">EPR registration &amp; compliance — the process</h2><img src="https://proindia.net/wp-content/uploads/2022/09/process.png" alt="Pro India EPR compliance process" loading="lazy" style="width:100%;max-width:900px;height:auto;margin:24px auto 0;border-radius:14px;"></div></section>
 <!-- PENALTY CALCULATOR -->
 <section class="section bg-light" id="calculator">
   <div class="container">
@@ -395,7 +499,6 @@
   </div>
 </section>
 
-<section class="section"><div class="container"><div class="text-center mb-48"><span class="label">See It In Action</span><h2 class="section-title">Pro India EPR — on video</h2><p class="section-subtitle">How we run end-to-end plastic waste compliance across India.</p></div><div class="grid-2" style="gap:24px;"><div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:14px;box-shadow:0 8px 32px rgba(0,0,0,.12);"><iframe src="https://www.youtube.com/embed/J6UpztUgsfU" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" title="Pro India EPR" loading="lazy" allowfullscreen></iframe></div><div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:14px;box-shadow:0 8px 32px rgba(0,0,0,.12);"><iframe src="https://www.youtube.com/embed/MVPP-pcvPcQ" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" title="Pro India recycling" loading="lazy" allowfullscreen></iframe></div></div></div></section>
 <!-- CTA BANNER -->
 <section class="cta-banner">
   <div class="container">
@@ -466,6 +569,16 @@ window.addEventListener('scroll', () => { document.getElementById('mainNav').cla
 document.getElementById('mobileToggle').addEventListener('click', () => { document.getElementById('navLinks').classList.toggle('open'); });
 document.querySelectorAll('.faq-question').forEach(q => {
   q.addEventListener('click', () => { const item = q.parentElement; const wasOpen = item.classList.contains('open'); document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open')); if (!wasOpen) item.classList.add('open'); });
+});
+document.querySelectorAll('.pi-tabbtn').forEach(b => {
+  b.addEventListener('click', () => {
+    const wrap = b.closest('.pi-tabs');
+    wrap.querySelectorAll('.pi-tabbtn').forEach(x => x.classList.remove('active'));
+    wrap.querySelectorAll('.pi-pane').forEach(x => x.classList.remove('active'));
+    b.classList.add('active');
+    const pane = wrap.querySelector('.pi-pane[data-pikey="' + b.dataset.pikey + '"]');
+    if (pane) pane.classList.add('active');
+  });
 });
 
 function calcPenalty2() {
