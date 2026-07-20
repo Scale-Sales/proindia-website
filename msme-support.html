@@ -74,7 +74,6 @@
 </section>
 
 <!-- TRUST BAR -->
-<section class="section" style="padding-top:0;padding-bottom:0;"><div class="container"><img src="https://proindia.net/wp-content/uploads/2018/08/pexels-photo-811108-560x385.png" alt="MSME supply-chain growth" loading="lazy" style="width:100%;height:auto;display:block;border-radius:16px;box-shadow:0 8px 32px rgba(0,0,0,.10);margin-top:-30px;max-height:340px;object-fit:cover;"></div></section>
 <section class="trust-bar">
   <div class="container">
     <div class="trust-bar-inner">
@@ -93,23 +92,67 @@
       <span class="label">How We Help MSMEs</span>
       <h2 class="section-title">Three ways we help you grow — sustainably</h2>
     </div>
+    <style>
+      .card-more{margin:6px 0 14px}
+      .card-more-btn{background:none;border:0;color:var(--secondary);font-weight:700;font-size:.88rem;cursor:pointer;padding:6px 0;display:inline-flex;align-items:center;gap:7px;font-family:inherit}
+      .card-more-btn .chev{transition:transform .25s;font-size:.8rem}
+      .card-more.open .card-more-btn .chev{transform:rotate(180deg)}
+      .card-more-panel{max-height:0;overflow:hidden;transition:max-height .35s ease}
+      .card-more.open .card-more-panel{max-height:500px}
+      .card-more-panel ul{margin:8px 0 4px;padding:0;list-style:none;text-align:left}
+      .card-more-panel li{font-size:.88rem;color:var(--text-secondary);padding:5px 0 5px 24px;position:relative;line-height:1.45}
+      .card-more-panel li::before{content:"✓";position:absolute;left:0;top:5px;color:var(--secondary);font-weight:800}
+    </style>
     <div class="grid-3">
       <div class="card" id="supply-chain">
         <div style="font-size:2rem;margin-bottom:12px;">🔗</div>
         <div class="card-title">Supply-Chain Sustainability</div>
         <p class="card-desc">Meet the sustainability, safety, environmental and business-continuity demands of your OEMs, customers and regulators. We build your compliance, risk and BRSR value-chain readiness so you keep — and win — contracts.</p>
+        <div class="card-more">
+          <button type="button" class="card-more-btn" aria-expanded="false">What's included <span class="chev">▾</span></button>
+          <div class="card-more-panel"><ul>
+            <li>OEM &amp; customer ESG questionnaires</li>
+            <li>BRSR value-chain readiness</li>
+            <li>Safety, environment &amp; risk compliance</li>
+            <li>Business-continuity planning</li>
+            <li>Supplier code &amp; audits</li>
+            <li>Keep and win contracts</li>
+          </ul></div>
+        </div>
         <a href="contact.html" class="btn btn-sm btn-primary">Get compliant →</a>
       </div>
       <div class="card" id="scale-card">
         <div style="font-size:2rem;margin-bottom:12px;">🚀</div>
         <div class="card-title">SCALE — Growth & CEO Coaching</div>
         <p class="card-desc">A 6–12 month program where Amit Saha coaches the owner and top team to solve the real bottleneck — usually sales growth — with operational excellence and transformation baked in.</p>
+        <div class="card-more">
+          <button type="button" class="card-more-btn" aria-expanded="false">What's included <span class="chev">▾</span></button>
+          <div class="card-more-panel"><ul>
+            <li>6–12 month CEO &amp; top-team engagement</li>
+            <li>Sales growth: distribution, channel, GTM</li>
+            <li>Operational excellence (LEAN, Six Sigma)</li>
+            <li>Leadership coaching &amp; mentoring</li>
+            <li>Business transformation &amp; restructuring</li>
+            <li>Led by Amit Saha (30 yrs P&amp;L)</li>
+          </ul></div>
+        </div>
         <a href="#scale" class="btn btn-sm btn-primary">See SCALE →</a>
       </div>
       <div class="card" id="franchise-card">
         <div style="font-size:2rem;margin-bottom:12px;">🏢</div>
         <div class="card-title">Franchising</div>
         <p class="card-desc">Build a plastic-recycling and EPR compliance business under the Pro India brand at state level — with a standardised playbook, training and a ready partner network.</p>
+        <div class="card-more">
+          <button type="button" class="card-more-btn" aria-expanded="false">What's included <span class="chev">▾</span></button>
+          <div class="card-more-panel"><ul>
+            <li>State-level plastic-recycling &amp; EPR business</li>
+            <li>Standardised operating playbook</li>
+            <li>Training &amp; onboarding</li>
+            <li>Ready recycler / partner network</li>
+            <li>Pro India brand &amp; marketing support</li>
+            <li>Single-window compliance backing</li>
+          </ul></div>
+        </div>
         <a href="franchise.html" class="btn btn-sm btn-primary">Explore franchise →</a>
       </div>
     </div>
@@ -257,6 +300,7 @@
 window.addEventListener('scroll', () => { document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 20); });
 document.getElementById('mobileToggle').addEventListener('click', () => { document.getElementById('navLinks').classList.toggle('open'); });
 document.querySelectorAll('.faq-question').forEach(q => { q.addEventListener('click', () => { const item = q.parentElement; const was = item.classList.contains('open'); document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open')); if (!was) item.classList.add('open'); }); });
+document.querySelectorAll('.card-more-btn').forEach(b => { b.addEventListener('click', () => { const w = b.closest('.card-more'); const open = w.classList.toggle('open'); b.setAttribute('aria-expanded', open ? 'true' : 'false'); }); });
 function submitMsme(){ const name=document.getElementById('msmeName').value,email=document.getElementById('msmeEmail').value; if(!name||!email){alert('Please enter name and email.');return;} const webhookUrl='https://flow.zoho.in/YOUR_ZOHO_FLOW_WEBHOOK_URL'; fetch(webhookUrl,{method:'POST',headers:{'Content-Type':'application/json'},mode:'no-cors',body:JSON.stringify({name,email,phone:document.getElementById('msmePhone').value,interest:document.getElementById('msmeInterest').value,source:'MSME Page CTA'})}).catch(()=>{}); document.querySelector('.cta-form').innerHTML='<div style="text-align:center;padding:40px;"><div style="font-size:2.5rem;margin-bottom:16px;">✅</div><div style="font-size:1.1rem;font-weight:700;color:white;">Thank you!</div><div style="color:rgba(255,255,255,0.75);font-size:0.9rem;margin-top:8px;">We\'ll reach out within 2 hours.</div></div>'; }
 </script>
 <script defer src="probot.js"></script>
