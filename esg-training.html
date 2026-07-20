@@ -221,14 +221,14 @@
 <!-- STATS STRIP -->
 <div class="stats-strip">
   <div class="stats-inner">
-    <div class="stat-item"><div class="stat-num" data-target="22">0</div><div class="stat-label">Hours Live</div></div>
-    <div class="stat-item"><div class="stat-num" data-target="10">0</div><div class="stat-label">Live Sessions</div></div>
-    <div class="stat-item"><div class="stat-num" data-target="11">0</div><div class="stat-label">Recorded Modules</div></div>
-    <div class="stat-item"><div class="stat-num" data-target="8">0</div><div class="stat-label">Quizzes</div></div>
+    <div class="stat-item"><div class="stat-num" data-target="22">22</div><div class="stat-label">Hours Live</div></div>
+    <div class="stat-item"><div class="stat-num" data-target="10">10</div><div class="stat-label">Live Sessions</div></div>
+    <div class="stat-item"><div class="stat-num" data-target="11">11</div><div class="stat-label">Recorded Modules</div></div>
+    <div class="stat-item"><div class="stat-num" data-target="8">8</div><div class="stat-label">Quizzes</div></div>
     <div class="stat-item"><div class="stat-num">₹4L–9L</div><div class="stat-label">Avg Salary</div></div>
     <div class="stat-item"><div class="stat-num">IIMB</div><div class="stat-label">Partnership</div></div>
-    <div class="stat-item"><div class="stat-num" data-target="100">0</div><div class="stat-label">+ Clients Served</div></div>
-    <div class="stat-item"><div class="stat-num" data-target="27">0</div><div class="stat-label">+ Yrs Experience</div></div>
+    <div class="stat-item"><div class="stat-num" data-target="100">100+</div><div class="stat-label">Clients Served</div></div>
+    <div class="stat-item"><div class="stat-num" data-target="27">27+</div><div class="stat-label">Yrs Experience</div></div>
   </div>
 </div>
 
@@ -1070,26 +1070,32 @@ document.addEventListener('DOMContentLoaded', function() {
   };
   if (hash && validTabs[hash]) showTab(validTabs[hash]);
 
-  // ── ANIMATED STAT COUNTERS ──
+  // ── ANIMATED STAT COUNTERS (static HTML already shows final values; animate as enhancement) ──
   var counters = document.querySelectorAll('.stat-num[data-target]');
-  var observer = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
-      if (entry.isIntersecting) {
-        var el = entry.target;
-        var target = parseInt(el.getAttribute('data-target'));
-        var start = 0;
-        var duration = 1200;
-        var step = Math.ceil(target / (duration / 16));
-        var timer = setInterval(function() {
-          start += step;
-          if (start >= target) { start = target; clearInterval(timer); }
-          el.textContent = start + (target >= 100 ? '+' : '');
-        }, 16);
-        observer.unobserve(el);
-      }
-    });
-  }, { threshold: 0.5 });
-  counters.forEach(function(c) { observer.observe(c); });
+  function animateCounter(el) {
+    if (el.dataset.done) return; el.dataset.done = '1';
+    var target = parseInt(el.getAttribute('data-target'));
+    var suffix = target >= 100 ? '+' : '';
+    var dur = 1100, t0 = null;
+    el.textContent = '0' + suffix;
+    function frame(ts) {
+      if (!t0) t0 = ts;
+      var p = Math.min(1, (ts - t0) / dur);
+      el.textContent = Math.floor(p * target) + suffix;
+      if (p < 1) { requestAnimationFrame(frame); } else { el.textContent = target + suffix; }
+    }
+    requestAnimationFrame(frame);
+  }
+  if ('IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) { animateCounter(entry.target); observer.unobserve(entry.target); }
+      });
+    }, { threshold: 0.3 });
+    counters.forEach(function(c) { observer.observe(c); });
+    // Safety net: if the observer never fires (e.g. background tab), values already show
+    // their final numbers from the HTML, so nothing to do.
+  }
 });
 
 // ── FORM SUBMISSIONS ──
