@@ -91,69 +91,92 @@
     <div class="text-center mb-48">
       <span class="label">How We Help MSMEs</span>
       <h2 class="section-title">Three ways we help you grow — sustainably</h2>
+      <p class="section-subtitle">Tap a pillar to see exactly what's included.</p>
     </div>
     <style>
-      .card-more{margin:6px 0 14px}
-      .card-more-btn{background:none;border:0;color:var(--secondary);font-weight:700;font-size:.88rem;cursor:pointer;padding:6px 0;display:inline-flex;align-items:center;gap:7px;font-family:inherit}
-      .card-more-btn .chev{transition:transform .25s;font-size:.8rem}
-      .card-more.open .card-more-btn .chev{transform:rotate(180deg)}
-      .card-more-panel{max-height:0;overflow:hidden;transition:max-height .35s ease}
-      .card-more.open .card-more-panel{max-height:500px}
-      .card-more-panel ul{margin:8px 0 4px;padding:0;list-style:none;text-align:left}
-      .card-more-panel li{font-size:.88rem;color:var(--text-secondary);padding:5px 0 5px 24px;position:relative;line-height:1.45}
-      .card-more-panel li::before{content:"✓";position:absolute;left:0;top:5px;color:var(--secondary);font-weight:800}
+      .pi-tabs{max-width:960px;margin:0 auto}
+      .pi-tabnav{display:flex;gap:6px;background:#eef4ee;border-radius:12px;padding:6px;flex-wrap:wrap;margin-bottom:28px}
+      .pi-tabbtn{flex:1;min-width:150px;padding:.8rem 1rem;border:none;background:transparent;border-radius:8px;font-family:inherit;font-size:.9rem;font-weight:700;color:#4a5a4a;cursor:pointer;transition:.2s;white-space:nowrap}
+      .pi-tabbtn:hover{background:rgba(29,185,84,.12);color:var(--primary)}
+      .pi-tabbtn.active{background:var(--primary);color:#fff;box-shadow:0 2px 10px rgba(13,59,46,.28)}
+      .pi-pane{display:none;animation:piFade .3s ease}
+      .pi-pane.active{display:block}
+      @keyframes piFade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+      .pi-panel{background:var(--white,#fff);border:1px solid var(--border);border-radius:16px;padding:30px}
+      .pi-badge{display:inline-block;background:var(--primary);color:#fff;font-size:.72rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:5px 12px;border-radius:20px;margin-bottom:12px}
+      .pi-panel h3{font-size:1.45rem;font-weight:800;color:var(--primary);margin:0 0 8px}
+      .pi-panel-sub{color:var(--text-secondary);margin:0 0 20px;max-width:660px}
+      .pi-feat{list-style:none;padding:0;margin:0 0 22px;display:grid;grid-template-columns:1fr 1fr;gap:10px 26px}
+      .pi-feat li{font-size:.92rem;color:var(--text-secondary);padding-left:26px;position:relative;line-height:1.5}
+      .pi-feat li::before{content:"\2713";position:absolute;left:0;top:0;color:var(--secondary);font-weight:800}
+      .pi-note{background:var(--off-white,#f6faf6);border-left:3px solid var(--secondary);border-radius:0 8px 8px 0;padding:12px 16px;font-size:.88rem;color:var(--text-secondary);margin:0 0 20px}
+      .pi-cta{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+      @media(max-width:640px){.pi-feat{grid-template-columns:1fr}.pi-tabbtn{min-width:120px;font-size:.82rem}.pi-panel{padding:22px 18px}}
     </style>
-    <div class="grid-3">
-      <div class="card" id="supply-chain">
-        <div style="font-size:2rem;margin-bottom:12px;">🔗</div>
-        <div class="card-title">Supply-Chain Sustainability</div>
-        <p class="card-desc">Meet the sustainability, safety, environmental and business-continuity demands of your OEMs, customers and regulators. We build your compliance, risk and BRSR value-chain readiness so you keep — and win — contracts.</p>
-        <div class="card-more">
-          <button type="button" class="card-more-btn" aria-expanded="false">What's included <span class="chev">▾</span></button>
-          <div class="card-more-panel"><ul>
-            <li>OEM &amp; customer ESG questionnaires</li>
+    <div class="pi-tabs" data-pigroup="msme">
+      <div class="pi-tabnav">
+        <button type="button" class="pi-tabbtn active" data-pikey="supply">Supply-Chain</button>
+        <button type="button" class="pi-tabbtn" data-pikey="scale">SCALE — Growth</button>
+        <button type="button" class="pi-tabbtn" data-pikey="franchise">Franchising</button>
+      </div>
+      <div class="pi-pane active" data-pikey="supply">
+        <div class="pi-panel">
+          <span class="pi-badge">Supply-Chain Sustainability</span>
+          <h3>Meet OEM, customer &amp; legal demands &mdash; keep and win contracts</h3>
+          <p class="pi-panel-sub">Build the compliance, risk and BRSR value-chain readiness your OEMs, customers and regulators now require.</p>
+          <ul class="pi-feat">
+            <li>OEM &amp; customer ESG questionnaires answered</li>
             <li>BRSR value-chain readiness</li>
-            <li>Safety, environment &amp; risk compliance</li>
+            <li>Safety, environmental &amp; risk compliance</li>
             <li>Business-continuity planning</li>
             <li>Supplier code &amp; audits</li>
-            <li>Keep and win contracts</li>
-          </ul></div>
+            <li>ISO / EHS alignment</li>
+          </ul>
+          <div class="pi-cta">
+            <a href="contact.html" class="btn btn-sm btn-primary">Get compliant &rarr;</a>
+            <a href="https://wa.me/919319001214?text=Hi%20Pro%20India%2C%20supply-chain%20sustainability%20enquiry" target="_blank" rel="noopener" class="btn btn-sm btn-outline">WhatsApp us</a>
+          </div>
         </div>
-        <a href="contact.html" class="btn btn-sm btn-primary">Get compliant →</a>
       </div>
-      <div class="card" id="scale-card">
-        <div style="font-size:2rem;margin-bottom:12px;">🚀</div>
-        <div class="card-title">SCALE — Growth & CEO Coaching</div>
-        <p class="card-desc">A 6–12 month program where Amit Saha coaches the owner and top team to solve the real bottleneck — usually sales growth — with operational excellence and transformation baked in.</p>
-        <div class="card-more">
-          <button type="button" class="card-more-btn" aria-expanded="false">What's included <span class="chev">▾</span></button>
-          <div class="card-more-panel"><ul>
-            <li>6–12 month CEO &amp; top-team engagement</li>
-            <li>Sales growth: distribution, channel, GTM</li>
+      <div class="pi-pane" data-pikey="scale">
+        <div class="pi-panel">
+          <span class="pi-badge">SCALE &middot; Growth &amp; CEO Coaching</span>
+          <h3>Stop guessing. Start growing.</h3>
+          <p class="pi-panel-sub">A scientific sales-growth system for owner-driven B2B SMEs doing &#8377;50L&ndash;&#8377;5Cr &mdash; led by Amit Saha (30-yr sales career, 400+ entrepreneurs mentored).</p>
+          <div class="pi-note">Start with the <strong>&#8377;99, 4-hour live Business Growth Workshop</strong> &mdash; you leave with your Ideal Client Profile and a named list of 20 real target companies to approach on Monday.</div>
+          <ul class="pi-feat">
+            <li>Define your ideal buyer across 5 parameters</li>
+            <li>Build your &ldquo;Dream 20&rdquo; target-company list</li>
+            <li>Map decision-makers &amp; first outreach route</li>
+            <li>Sales growth: distribution, channel &amp; GTM</li>
             <li>Operational excellence (LEAN, Six Sigma)</li>
-            <li>Leadership coaching &amp; mentoring</li>
-            <li>Business transformation &amp; restructuring</li>
-            <li>Led by Amit Saha (30 yrs P&amp;L)</li>
-          </ul></div>
+            <li>6&ndash;12 month CEO &amp; top-team coaching (full program)</li>
+          </ul>
+          <div class="pi-cta">
+            <a href="https://scale.proindia.net/register/" target="_blank" rel="noopener" class="btn btn-sm btn-primary">Join the &#8377;99 workshop &rarr;</a>
+            <a href="https://scale.proindia.net/audit/" target="_blank" rel="noopener" class="btn btn-sm btn-outline">Free 2-min sales audit</a>
+            <a href="#scale" class="btn btn-sm btn-outline">See full SCALE</a>
+          </div>
         </div>
-        <a href="#scale" class="btn btn-sm btn-primary">See SCALE →</a>
       </div>
-      <div class="card" id="franchise-card">
-        <div style="font-size:2rem;margin-bottom:12px;">🏢</div>
-        <div class="card-title">Franchising</div>
-        <p class="card-desc">Build a plastic-recycling and EPR compliance business under the Pro India brand at state level — with a standardised playbook, training and a ready partner network.</p>
-        <div class="card-more">
-          <button type="button" class="card-more-btn" aria-expanded="false">What's included <span class="chev">▾</span></button>
-          <div class="card-more-panel"><ul>
+      <div class="pi-pane" data-pikey="franchise">
+        <div class="pi-panel">
+          <span class="pi-badge">Franchising</span>
+          <h3>Run a plastic-recycling &amp; EPR business under the Pro India brand</h3>
+          <p class="pi-panel-sub">Expand at state level with a proven playbook, training and a ready partner network spanning 30+ cities.</p>
+          <ul class="pi-feat">
             <li>State-level plastic-recycling &amp; EPR business</li>
             <li>Standardised operating playbook</li>
             <li>Training &amp; onboarding</li>
-            <li>Ready recycler / partner network</li>
+            <li>Ready recycler / partner network (30+ cities)</li>
             <li>Pro India brand &amp; marketing support</li>
             <li>Single-window compliance backing</li>
-          </ul></div>
+          </ul>
+          <div class="pi-cta">
+            <a href="franchise.html" class="btn btn-sm btn-primary">Explore franchise &rarr;</a>
+            <a href="https://wa.me/919319001214?text=Hi%20Pro%20India%2C%20franchising%20enquiry" target="_blank" rel="noopener" class="btn btn-sm btn-outline">WhatsApp us</a>
+          </div>
         </div>
-        <a href="franchise.html" class="btn btn-sm btn-primary">Explore franchise →</a>
       </div>
     </div>
   </div>
@@ -300,7 +323,7 @@
 window.addEventListener('scroll', () => { document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 20); });
 document.getElementById('mobileToggle').addEventListener('click', () => { document.getElementById('navLinks').classList.toggle('open'); });
 document.querySelectorAll('.faq-question').forEach(q => { q.addEventListener('click', () => { const item = q.parentElement; const was = item.classList.contains('open'); document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open')); if (!was) item.classList.add('open'); }); });
-document.querySelectorAll('.card-more-btn').forEach(b => { b.addEventListener('click', () => { const w = b.closest('.card-more'); const open = w.classList.toggle('open'); b.setAttribute('aria-expanded', open ? 'true' : 'false'); }); });
+document.querySelectorAll('.pi-tabbtn').forEach(b => { b.addEventListener('click', () => { const wrap = b.closest('.pi-tabs'); wrap.querySelectorAll('.pi-tabbtn').forEach(x => x.classList.remove('active')); wrap.querySelectorAll('.pi-pane').forEach(x => x.classList.remove('active')); b.classList.add('active'); const pane = wrap.querySelector('.pi-pane[data-pikey="' + b.dataset.pikey + '"]'); if (pane) pane.classList.add('active'); }); });
 function submitMsme(){ const name=document.getElementById('msmeName').value,email=document.getElementById('msmeEmail').value; if(!name||!email){alert('Please enter name and email.');return;} const webhookUrl='https://flow.zoho.in/YOUR_ZOHO_FLOW_WEBHOOK_URL'; fetch(webhookUrl,{method:'POST',headers:{'Content-Type':'application/json'},mode:'no-cors',body:JSON.stringify({name,email,phone:document.getElementById('msmePhone').value,interest:document.getElementById('msmeInterest').value,source:'MSME Page CTA'})}).catch(()=>{}); document.querySelector('.cta-form').innerHTML='<div style="text-align:center;padding:40px;"><div style="font-size:2.5rem;margin-bottom:16px;">✅</div><div style="font-size:1.1rem;font-weight:700;color:white;">Thank you!</div><div style="color:rgba(255,255,255,0.75);font-size:0.9rem;margin-top:8px;">We\'ll reach out within 2 hours.</div></div>'; }
 </script>
 <script defer src="probot.js"></script>

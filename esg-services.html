@@ -113,87 +113,109 @@
     <div class="text-center mb-48">
       <span class="label">What We Do</span>
       <h2 class="section-title">Four ESG services, one accountable partner</h2>
-      <p class="section-subtitle">From first footprint to assured disclosure — pick a module or run the full journey.</p>
+      <p class="section-subtitle">From first footprint to assured disclosure — pick a module or run the full journey. Tap a service to see exactly what's included.</p>
     </div>
     <style>
-      .card-more{margin:6px 0 14px}
-      .card-more-btn{background:none;border:0;color:var(--secondary);font-weight:700;font-size:.88rem;cursor:pointer;padding:6px 0;display:inline-flex;align-items:center;gap:7px;font-family:inherit}
-      .card-more-btn .chev{transition:transform .25s;font-size:.8rem}
-      .card-more.open .card-more-btn .chev{transform:rotate(180deg)}
-      .card-more-panel{max-height:0;overflow:hidden;transition:max-height .35s ease}
-      .card-more.open .card-more-panel{max-height:500px}
-      .card-more-panel ul{margin:8px 0 4px;padding:0;list-style:none}
-      .card-more-panel li{font-size:.88rem;color:var(--text-secondary);padding:5px 0 5px 24px;position:relative;line-height:1.45}
-      .card-more-panel li::before{content:"✓";position:absolute;left:0;top:5px;color:var(--secondary);font-weight:800}
+      .pi-tabs{max-width:960px;margin:0 auto}
+      .pi-tabnav{display:flex;gap:6px;background:#eef4ee;border-radius:12px;padding:6px;flex-wrap:wrap;margin-bottom:28px}
+      .pi-tabbtn{flex:1;min-width:150px;padding:.8rem 1rem;border:none;background:transparent;border-radius:8px;font-family:inherit;font-size:.9rem;font-weight:700;color:#4a5a4a;cursor:pointer;transition:.2s;white-space:nowrap}
+      .pi-tabbtn:hover{background:rgba(29,185,84,.12);color:var(--primary)}
+      .pi-tabbtn.active{background:var(--primary);color:#fff;box-shadow:0 2px 10px rgba(13,59,46,.28)}
+      .pi-pane{display:none;animation:piFade .3s ease}
+      .pi-pane.active{display:block}
+      @keyframes piFade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+      .pi-panel{background:var(--white,#fff);border:1px solid var(--border);border-radius:16px;padding:30px}
+      .pi-badge{display:inline-block;background:var(--primary);color:#fff;font-size:.72rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:5px 12px;border-radius:20px;margin-bottom:12px}
+      .pi-panel h3{font-size:1.45rem;font-weight:800;color:var(--primary);margin:0 0 8px}
+      .pi-panel-sub{color:var(--text-secondary);margin:0 0 20px;max-width:640px}
+      .pi-feat{list-style:none;padding:0;margin:0 0 22px;display:grid;grid-template-columns:1fr 1fr;gap:10px 26px}
+      .pi-feat li{font-size:.92rem;color:var(--text-secondary);padding-left:26px;position:relative;line-height:1.5}
+      .pi-feat li::before{content:"\2713";position:absolute;left:0;top:0;color:var(--secondary);font-weight:800}
+      .pi-cta{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+      @media(max-width:640px){.pi-feat{grid-template-columns:1fr}.pi-tabbtn{min-width:120px;font-size:.82rem}.pi-panel{padding:22px 18px}}
     </style>
-    <div class="grid-2" style="gap:24px;">
-      <div class="card" id="consultancy">
-        <div class="card-badge card-badge-corporate">01 · Consultancy</div>
-        <div class="card-title">ESG Consultancy — Zero Waste & Net Zero</div>
-        <p class="card-desc">Strategy and roadmaps toward net zero and zero waste: carbon, plastic and water footprinting, materiality, target-setting (SBTi-aligned) and a costed, ROI-positive transition plan.</p>
-        <div class="card-more">
-          <button type="button" class="card-more-btn" aria-expanded="false">What's included <span class="chev">▾</span></button>
-          <div class="card-more-panel"><ul>
-            <li>Carbon footprint — Scope 1, 2 &amp; 3</li>
+    <div class="pi-tabs" data-pigroup="svc">
+      <div class="pi-tabnav">
+        <button type="button" class="pi-tabbtn active" data-pikey="consultancy">01 &middot; Consultancy</button>
+        <button type="button" class="pi-tabbtn" data-pikey="audits">02 &middot; Audits</button>
+        <button type="button" class="pi-tabbtn" data-pikey="reporting">03 &middot; Reporting</button>
+        <button type="button" class="pi-tabbtn" data-pikey="training">04 &middot; Training</button>
+      </div>
+      <div class="pi-pane active" data-pikey="consultancy">
+        <div class="pi-panel">
+          <span class="pi-badge">Consultancy</span>
+          <h3>ESG Consultancy &mdash; Zero Waste &amp; Net Zero</h3>
+          <p class="pi-panel-sub">Strategy and roadmaps toward net zero and zero waste &mdash; a costed, ROI-positive transition your board can approve.</p>
+          <ul class="pi-feat">
+            <li>Carbon footprint &mdash; Scope 1, 2 &amp; 3 (GHG Protocol, ISO 14064)</li>
             <li>Plastic &amp; water footprinting</li>
-            <li>Materiality assessment</li>
+            <li>Materiality &amp; double-materiality assessment</li>
             <li>SBTi-aligned target setting</li>
             <li>Costed net-zero transition roadmap</li>
-            <li>Zero-waste strategy &amp; circularity</li>
-          </ul></div>
+            <li>Zero-waste strategy &amp; circular-economy design</li>
+          </ul>
+          <div class="pi-cta">
+            <a href="contact.html" class="btn btn-sm btn-primary">Get started &rarr;</a>
+            <a href="https://wa.me/919319001214?text=Hi%20Pro%20India%2C%20I%20need%20ESG%20consultancy" target="_blank" rel="noopener" class="btn btn-sm btn-outline">WhatsApp us</a>
+          </div>
         </div>
-        <a href="contact.html" class="btn btn-sm btn-primary">Get started →</a>
       </div>
-      <div class="card" id="audits">
-        <div class="card-badge card-badge-corporate">02 · Audits</div>
-        <div class="card-title">ESG Audits & Gap Closure</div>
-        <p class="card-desc">Scope 1, 2 & 3 carbon audits, water audits and waste audits — with a clear gap-closure plan. We find the emissions, the leaks and the losses, then help you shut them.</p>
-        <div class="card-more">
-          <button type="button" class="card-more-btn" aria-expanded="false">What's included <span class="chev">▾</span></button>
-          <div class="card-more-panel"><ul>
+      <div class="pi-pane" data-pikey="audits">
+        <div class="pi-panel">
+          <span class="pi-badge">Audits</span>
+          <h3>ESG Audits &amp; Gap Closure</h3>
+          <p class="pi-panel-sub">We find the emissions, the leaks and the losses &mdash; then give you a prioritised plan to close them.</p>
+          <ul class="pi-feat">
             <li>Scope 1, 2 &amp; 3 carbon audit</li>
             <li>Water audit &amp; water balance</li>
             <li>Waste &amp; material-flow audit</li>
             <li>Energy audit (ISO 50001)</li>
-            <li>Prioritised gap-closure plan</li>
+            <li>Prioritised gap-closure action plan</li>
             <li>Re-audit &amp; verification</li>
-          </ul></div>
+          </ul>
+          <div class="pi-cta">
+            <a href="contact.html" class="btn btn-sm btn-primary">Book an audit &rarr;</a>
+            <a href="https://wa.me/919319001214?text=Hi%20Pro%20India%2C%20I%20need%20an%20ESG%20audit" target="_blank" rel="noopener" class="btn btn-sm btn-outline">WhatsApp us</a>
+          </div>
         </div>
-        <a href="contact.html" class="btn btn-sm btn-primary">Book an audit →</a>
       </div>
-      <div class="card" id="reporting">
-        <div class="card-badge card-badge-corporate">03 · Reporting</div>
-        <div class="card-title">ESG Reporting & Assurance</div>
-        <p class="card-desc">BRSR & BRSR Core, Sustainability Reports (GRI), Environmental Product Declarations (EPD) and CBAM reporting — prepared, assured and audit-ready for SEBI, investors and EU buyers.</p>
-        <div class="card-more">
-          <button type="button" class="card-more-btn" aria-expanded="false">What's included <span class="chev">▾</span></button>
-          <div class="card-more-panel"><ul>
+      <div class="pi-pane" data-pikey="reporting">
+        <div class="pi-panel">
+          <span class="pi-badge">Reporting</span>
+          <h3>ESG Reporting &amp; Assurance</h3>
+          <p class="pi-panel-sub">Prepared, assured and audit-ready for SEBI, investors and EU buyers.</p>
+          <ul class="pi-feat">
             <li>BRSR &amp; BRSR Core (SEBI Top 1000)</li>
             <li>GRI Sustainability Reports</li>
-            <li>Environmental Product Declarations (EPD)</li>
+            <li>Environmental Product Declarations (EPD, ISO 14025)</li>
             <li>CBAM reporting for EU exports</li>
             <li>Third-party assurance, audit-ready</li>
             <li>TCFD / CSRD alignment</li>
-          </ul></div>
+          </ul>
+          <div class="pi-cta">
+            <a href="contact.html" class="btn btn-sm btn-primary">Get report-ready &rarr;</a>
+            <a href="https://wa.me/919319001214?text=Hi%20Pro%20India%2C%20I%20need%20BRSR%2FESG%20reporting" target="_blank" rel="noopener" class="btn btn-sm btn-outline">WhatsApp us</a>
+          </div>
         </div>
-        <a href="contact.html" class="btn btn-sm btn-primary">Get report-ready →</a>
       </div>
-      <div class="card" id="training">
-        <div class="card-badge card-badge-corporate">04 · Training</div>
-        <div class="card-title">Corporate ESG Action Training</div>
-        <p class="card-desc">Upskill your leadership and operating teams to actually deliver net zero — practical, implementation-led training built from 30 years of on-ground sustainability experience.</p>
-        <div class="card-more">
-          <button type="button" class="card-more-btn" aria-expanded="false">What's included <span class="chev">▾</span></button>
-          <div class="card-more-panel"><ul>
+      <div class="pi-pane" data-pikey="training">
+        <div class="pi-panel">
+          <span class="pi-badge">Training</span>
+          <h3>Corporate ESG Action Training</h3>
+          <p class="pi-panel-sub">Upskill your leadership and operating teams to actually deliver net zero &mdash; built from 30 years of on-ground experience.</p>
+          <ul class="pi-feat">
             <li>Board &amp; leadership ESG training</li>
             <li>Net-zero implementation workshops</li>
             <li>BRSR &amp; disclosure capability building</li>
             <li>PRO TECHT software hands-on</li>
             <li>Sector-customised modules</li>
-            <li>Built from 30 years on-ground experience</li>
-          </ul></div>
+            <li>Certificate-backed, delivered live or on-site</li>
+          </ul>
+          <div class="pi-cta">
+            <a href="esg-training.html" class="btn btn-sm btn-primary">See training &rarr;</a>
+            <a href="https://wa.me/919319001214?text=Hi%20Pro%20India%2C%20corporate%20ESG%20training%20enquiry" target="_blank" rel="noopener" class="btn btn-sm btn-outline">WhatsApp us</a>
+          </div>
         </div>
-        <a href="esg-training.html" class="btn btn-sm btn-primary">See training →</a>
       </div>
     </div>
   </div>
@@ -379,8 +401,15 @@ document.getElementById('mobileToggle').addEventListener('click', () => { docume
 document.querySelectorAll('.faq-question').forEach(q => {
   q.addEventListener('click', () => { const it = q.closest('.faq-item'); if (it) it.classList.toggle('open'); });
 });
-document.querySelectorAll('.card-more-btn').forEach(b => {
-  b.addEventListener('click', () => { const w = b.closest('.card-more'); const open = w.classList.toggle('open'); b.setAttribute('aria-expanded', open ? 'true' : 'false'); });
+document.querySelectorAll('.pi-tabbtn').forEach(b => {
+  b.addEventListener('click', () => {
+    const wrap = b.closest('.pi-tabs');
+    wrap.querySelectorAll('.pi-tabbtn').forEach(x => x.classList.remove('active'));
+    wrap.querySelectorAll('.pi-pane').forEach(x => x.classList.remove('active'));
+    b.classList.add('active');
+    const pane = wrap.querySelector('.pi-pane[data-pikey="' + b.dataset.pikey + '"]');
+    if (pane) pane.classList.add('active');
+  });
 });
 </script>
 <script defer src="probot.js"></script>
