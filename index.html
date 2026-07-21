@@ -725,13 +725,13 @@ function submitLead() {
   if (!name || !email) { alert('Please enter your name and email.'); return; }
 
   // Send to Zoho CRM via webhook — Abhinav: replace URL with your Zoho Flow webhook
-  const webhookUrl = 'https://flow.zoho.in/YOUR_ZOHO_FLOW_WEBHOOK_URL';
+  const webhookUrl = 'https://n8n.srv1784975.hstgr.cloud/webhook/proindia-lead';
   const data = { name, email, phone, source: 'EPR Calculator', page: window.location.href };
 
   fetch(webhookUrl, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    mode: 'no-cors',
+    mode: 'cors',
     body: JSON.stringify(data)
   }).catch(() => {});
 
@@ -747,9 +747,9 @@ function submitConsultation() {
   if (!name || !email) { alert('Please enter your name and email.'); return; }
 
   // Replace with Zoho Flow webhook
-  const webhookUrl = 'https://flow.zoho.in/YOUR_ZOHO_FLOW_WEBHOOK_URL';
+  const webhookUrl = 'https://n8n.srv1784975.hstgr.cloud/webhook/proindia-lead';
   const data = { name, email, phone, service, source: 'Homepage CTA', page: window.location.href };
-  fetch(webhookUrl, { method:'POST', headers:{'Content-Type':'application/json'}, mode:'no-cors', body:JSON.stringify(data) }).catch(()=>{});
+  fetch(webhookUrl, { method:'POST', headers:{'Content-Type':'application/json'}, mode:'cors', body:JSON.stringify(data) }).catch(()=>{});
 
   document.querySelector('.cta-form').innerHTML = '<div style="text-align:center;padding:40px 20px;"><div style="font-size:2.5rem;margin-bottom:16px;">✅</div><div style="font-size:1.1rem;font-weight:700;color:white;margin-bottom:8px;">Request Received!</div><div style="color:rgba(255,255,255,0.75);font-size:0.9rem;">Our expert will contact you within 24 hours.</div></div>';
 }

@@ -607,8 +607,8 @@ function submitLead2() {
   const email = document.getElementById('leadEmail2').value;
   const phone = document.getElementById('leadPhone2').value;
   if (!name || !email) { alert('Please enter name and email.'); return; }
-  const webhookUrl = 'https://flow.zoho.in/YOUR_ZOHO_FLOW_WEBHOOK_URL';
-  fetch(webhookUrl, { method:'POST', headers:{'Content-Type':'application/json'}, mode:'no-cors', body:JSON.stringify({ name, email, phone, source:'EPR Calculator - EPR Page', page: window.location.href }) }).catch(()=>{});
+  const webhookUrl = 'https://n8n.srv1784975.hstgr.cloud/webhook/proindia-lead';
+  fetch(webhookUrl, { method:'POST', headers:{'Content-Type':'application/json'}, mode:'cors', body:JSON.stringify({ name, email, phone, source:'EPR Calculator - EPR Page', page: window.location.href }) }).catch(()=>{});
   document.getElementById('calcLead2').innerHTML = '<div style="color:#6ee7a0;font-weight:600;text-align:center;padding:16px;">✅ Received! Our EPR expert will reach you within 2 hours.</div>';
 }
 
@@ -616,8 +616,8 @@ function submitEprCta() {
   const name = document.getElementById('eprCtaName').value;
   const email = document.getElementById('eprCtaEmail').value;
   if (!name || !email) { alert('Please enter name and email.'); return; }
-  const webhookUrl = 'https://flow.zoho.in/YOUR_ZOHO_FLOW_WEBHOOK_URL';
-  fetch(webhookUrl, { method:'POST', headers:{'Content-Type':'application/json'}, mode:'no-cors', body: JSON.stringify({ name, email, phone: document.getElementById('eprCtaPhone').value, category: document.getElementById('eprCtaCategory').value, source: 'EPR Page CTA' }) }).catch(()=>{});
+  const webhookUrl = 'https://n8n.srv1784975.hstgr.cloud/webhook/proindia-lead';
+  fetch(webhookUrl, { method:'POST', headers:{'Content-Type':'application/json'}, mode:'cors', body: JSON.stringify({ name, email, phone: document.getElementById('eprCtaPhone').value, category: document.getElementById('eprCtaCategory').value, source: 'EPR Page CTA' }) }).catch(()=>{});
   document.querySelector('.cta-form').innerHTML = '<div style="text-align:center;padding:40px;"><div style="font-size:2.5rem;margin-bottom:16px;">✅</div><div style="font-size:1.1rem;font-weight:700;color:white;">Consultation Booked!</div><div style="color:rgba(255,255,255,0.75);font-size:0.9rem;margin-top:8px;">Our EPR expert will call you within 2 hours.</div></div>';
 }
 </script>

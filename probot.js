@@ -13,7 +13,7 @@
   // ---- CONFIG (edit these) ----
   var CONFIG = {
     waNumber: "919319001214",                 // WhatsApp / missed-call number (no +)
-    zohoWebhook: "https://flow.zoho.in/YOUR_ZOHO_FLOW_WEBHOOK_URL", // Zoho Flow -> Zoho Campaigns
+    zohoWebhook: "https://n8n.srv1784975.hstgr.cloud/webhook/proindia-lead", // Zoho Flow -> Zoho Campaigns
     brand: "#0d3b2e", accent: "#f5a623", green: "#1db954", wa: "#25D366",
     logo: "https://proindia.net/wp-content/uploads/2020/05/ProIndia-Solutions-Logo_stamp1-e1588359956550-150x150.png"
   };
@@ -370,8 +370,8 @@
       interest: tag, path: state.lastTag || tag,
       source: "ProBot", page: location.href, ts: new Date().toISOString()
     };
-    // Transfer to Zoho (Flow -> Campaigns/CRM). no-cors: fire & forget.
-    try { fetch(CONFIG.zohoWebhook, { method: "POST", mode: "no-cors", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) }); } catch (e) {}
+    // Transfer to Zoho (Flow -> Campaigns/CRM). cors: fire & forget.
+    try { fetch(CONFIG.zohoWebhook, { method: "POST", mode: "cors", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) }); } catch (e) {}
     track("probot_lead", { probot_choice: tag });
     addUser(name + (wa ? " · " + wa : ""));
     addBot("✅ Thank you, <b>" + (name.split(" ")[0] || "there") + "</b>! You're in — our team will reach out within 24 hours. Prefer to chat now?");

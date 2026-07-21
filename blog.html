@@ -331,10 +331,10 @@ function subscribeNL() {
   const name = document.getElementById('nlName').value;
   const email = document.getElementById('nlEmail').value;
   if (!email) return;
-  fetch('https://flow.zoho.in/YOUR_ZOHO_FLOW_WEBHOOK_URL', {
+  fetch('https://n8n.srv1784975.hstgr.cloud/webhook/proindia-lead', {
     method: 'POST',
     headers: {'Content-Type': 'application/json'},
-    mode: 'no-cors',
+    mode: 'cors',
     body: JSON.stringify({name, email, source: 'Blog Newsletter Sidebar', interest: 'Newsletter'})
   }).catch(() => {});
   document.getElementById('nlSuccess').style.display = 'block';

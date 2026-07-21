@@ -1140,8 +1140,8 @@ function submitEnroll(e) {
   var data = {};
   new FormData(form).forEach(function(v, k) { data[k] = v; });
   data.form_type = 'esg_enroll';
-  fetch('https://flow.zoho.in/YOUR_ZOHO_FLOW_WEBHOOK_URL', {
-    method: 'POST', mode: 'no-cors',
+  fetch('https://n8n.srv1784975.hstgr.cloud/webhook/proindia-lead', {
+    method: 'POST', mode: 'cors',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(data)
   });
@@ -1157,8 +1157,8 @@ function submitAmbassador(e) {
   var data = {};
   new FormData(form).forEach(function(v, k) { data[k] = v; });
   data.form_type = 'campus_ambassador';
-  fetch('https://flow.zoho.in/YOUR_ZOHO_FLOW_WEBHOOK_URL', {
-    method: 'POST', mode: 'no-cors',
+  fetch('https://n8n.srv1784975.hstgr.cloud/webhook/proindia-lead', {
+    method: 'POST', mode: 'cors',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(data)
   });
