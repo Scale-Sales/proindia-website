@@ -411,6 +411,7 @@ document.querySelectorAll('.pi-tabbtn').forEach(b => {
     if (pane) pane.classList.add('active');
   });
 });
+(function(){function piHash(){var h=(location.hash||'').replace('#','');if(!h)return;var b=document.querySelector('.pi-tabbtn[data-pikey="'+h+'"]');if(b){b.click();var n=document.querySelector('.pi-tabnav');if(n)n.scrollIntoView({block:'center'});}}window.addEventListener('hashchange',piHash);setTimeout(piHash,80);})();
 </script>
 <script defer src="probot.js"></script>
 </body>

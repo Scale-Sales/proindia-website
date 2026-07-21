@@ -22,52 +22,233 @@
   // node: { id, msg, options:[{label,goto|url|action}] }  action: 'lead' | 'human'
   var MENU = {
     root: {
-      msg: "Hi! I'm ProBot 🤖 — I'll point you to the right Pro India service in a few taps. What brings you here?",
+      msg: "Hi! I'm ProBot 🤖 — menu-driven, no guesswork. Pick an area and I'll walk you down to the exact service.",
       options: [
         { label: "🌍 ESG for my company (B2B)", goto: "esg" },
         { label: "🎓 ESG Training / Certification", goto: "training" },
         { label: "♻️ EPR Compliance", goto: "epr" },
         { label: "🏭 MSME Support & Growth", goto: "msme" },
-        { label: "📞 Talk to a Pro India", action: "human", tag: "Talk to a Pro India", msg: "We would reach you — please provide your details." }
+        { label: "📞 Talk to a Pro India", action: "human", tag: "Talk to a Pro India" }
       ]
     },
+
+    /* ===== ESG SERVICES — tabs ===== */
     esg: {
-      msg: "ESG for your company — which do you need?",
+      msg: "ESG Services — pick a tab:",
       options: [
-        { label: "Net Zero / Footprinting", url: "esg-services.html#consultancy", tag: "ESG Consultancy" },
-        { label: "BRSR / CBAM / Reporting", url: "esg-services.html#reporting", tag: "ESG Reporting" },
-        { label: "Carbon / Water / Waste Audit", url: "esg-services.html#audits", tag: "ESG Audit" },
-        { label: "Corporate ESG Training", url: "esg-services.html#training", tag: "Corporate ESG Training" },
-        { label: "🗓 Book a free ESG assessment", action: "lead", tag: "ESG - Book Assessment" }
+        { label: "01 · Consultancy", goto: "esg_consultancy" },
+        { label: "02 · Audits", goto: "esg_audits" },
+        { label: "03 · Reporting", goto: "esg_reporting" },
+        { label: "04 · Training", goto: "esg_training" }
       ]
     },
+    esg_consultancy: {
+      msg: "ESG Consultancy — Net Zero & Zero Waste. What's included:",
+      options: [
+        { label: "Carbon footprint (Scope 1–3)", url: "esg-services.html#consultancy", tag: "Consultancy · Carbon footprint" },
+        { label: "Plastic & water footprinting", url: "esg-services.html#consultancy", tag: "Consultancy · Plastic & water footprint" },
+        { label: "Materiality assessment", url: "esg-services.html#consultancy", tag: "Consultancy · Materiality" },
+        { label: "SBTi target setting", url: "esg-services.html#consultancy", tag: "Consultancy · SBTi targets" },
+        { label: "Net-zero transition roadmap", url: "esg-services.html#consultancy", tag: "Consultancy · Net-zero roadmap" },
+        { label: "📝 Talk to a consultant", action: "lead", tag: "ESG Consultancy" }
+      ]
+    },
+    esg_audits: {
+      msg: "ESG Audits & Gap Closure. What's included:",
+      options: [
+        { label: "Scope 1/2/3 carbon audit", url: "esg-services.html#audits", tag: "Audits · Carbon" },
+        { label: "Water audit & balance", url: "esg-services.html#audits", tag: "Audits · Water" },
+        { label: "Waste & material-flow audit", url: "esg-services.html#audits", tag: "Audits · Waste" },
+        { label: "Energy audit (ISO 50001)", url: "esg-services.html#audits", tag: "Audits · Energy" },
+        { label: "Gap-closure action plan", url: "esg-services.html#audits", tag: "Audits · Gap closure" },
+        { label: "📝 Talk to an auditor", action: "lead", tag: "ESG Audits" }
+      ]
+    },
+    esg_reporting: {
+      msg: "ESG Reporting & Assurance. What's included:",
+      options: [
+        { label: "BRSR & BRSR Core", url: "esg-services.html#reporting", tag: "Reporting · BRSR" },
+        { label: "GRI Sustainability Report", url: "esg-services.html#reporting", tag: "Reporting · GRI" },
+        { label: "EPD (ISO 14025)", url: "esg-services.html#reporting", tag: "Reporting · EPD" },
+        { label: "CBAM reporting (EU exports)", url: "esg-services.html#reporting", tag: "Reporting · CBAM" },
+        { label: "Assurance · TCFD / CSRD", url: "esg-services.html#reporting", tag: "Reporting · Assurance" },
+        { label: "📝 Talk to a reporting expert", action: "lead", tag: "ESG Reporting" }
+      ]
+    },
+    esg_training: {
+      msg: "Corporate ESG Action Training. What's included:",
+      options: [
+        { label: "Board & leadership training", url: "esg-services.html#training", tag: "Corp Training · Leadership" },
+        { label: "Net-zero implementation workshops", url: "esg-services.html#training", tag: "Corp Training · Net-zero" },
+        { label: "BRSR capability building", url: "esg-services.html#training", tag: "Corp Training · BRSR" },
+        { label: "PRO TECHT software", url: "esg-services.html#training", tag: "Corp Training · PRO TECHT" },
+        { label: "📝 Get a training quote", action: "lead", tag: "Corporate ESG Training" }
+      ]
+    },
+
+    /* ===== ESG TRAINING — tabs ===== */
     training: {
-      msg: "Great — learning & certification. Pick one:",
+      msg: "ESG Training — who's it for?",
       options: [
-        { label: "Executive ESG Certification", url: "esg-training.html", tag: "Exec ESG Cert" },
-        { label: "Student ESG Program", url: "esg-training.html#student", tag: "Student ESG" },
-        { label: "Coaching & Mentoring (EIR)", url: "esg-training.html", tag: "Coaching/EIR" },
-        { label: "Campus Ambassador", url: "esg-training.html#student", tag: "Campus Ambassador" },
-        { label: "🗓 Talk to a training advisor", action: "lead", tag: "Training - Advisor" }
+        { label: "🎓 Students", goto: "tr_students" },
+        { label: "💼 Executives", goto: "tr_exec" },
+        { label: "🏢 Corporate & MSME", goto: "tr_corp" },
+        { label: "⭐ Specialized", goto: "tr_spec" },
+        { label: "🌱 Campus Ambassador", goto: "tr_campus" }
       ]
     },
+    tr_students: {
+      msg: "ESG Student Certification. Explore:",
+      options: [
+        { label: "10 live sessions curriculum", url: "esg-training.html#students", tag: "Student · Curriculum" },
+        { label: "Career outcomes & salary", url: "esg-training.html#students", tag: "Student · Careers" },
+        { label: "Fees — ₹29,900", url: "esg-training.html#students", tag: "Student · Fees" },
+        { label: "📝 Apply / talk to an advisor", action: "lead", tag: "ESG Student Certification" }
+      ]
+    },
+    tr_exec: {
+      msg: "ESG Executive Certification. Explore:",
+      options: [
+        { label: "Executive curriculum", url: "esg-training.html#executives", tag: "Exec · Curriculum" },
+        { label: "Next batch — 7 Apr 2026", url: "esg-training.html#executives", tag: "Exec · Next batch" },
+        { label: "50+ hiring partners", url: "esg-training.html#executives", tag: "Exec · Placement" },
+        { label: "Fees — ₹29,900", url: "esg-training.html#executives", tag: "Exec · Fees" },
+        { label: "📝 Register / talk to advisor", action: "lead", tag: "ESG Executive Certification" }
+      ]
+    },
+    tr_corp: {
+      msg: "Corporate & MSME training. Pick one:",
+      options: [
+        { label: "B2B Corporate ESG Training", url: "esg-training.html#corporate", tag: "Corp/MSME · B2B" },
+        { label: "MSME Sustainability Training", url: "esg-training.html#corporate", tag: "Corp/MSME · MSME" },
+        { label: "Engineering Internship", url: "esg-training.html#corporate", tag: "Corp/MSME · Internship" },
+        { label: "📝 Talk to us", action: "lead", tag: "Corporate/MSME Training" }
+      ]
+    },
+    tr_spec: {
+      msg: "Specialized programs. Pick one:",
+      options: [
+        { label: "IIMB–Pro India ESG Module", url: "esg-training.html#specialized", tag: "Specialized · IIMB" },
+        { label: "EPD Training (ISO 14025)", url: "esg-training.html#specialized", tag: "Specialized · EPD" },
+        { label: "Green Building (LEED/GRIHA/IGBC)", url: "esg-training.html#specialized", tag: "Specialized · Green Building" },
+        { label: "EIR — Startup Support", url: "esg-training.html#specialized", tag: "Specialized · EIR" },
+        { label: "📝 Talk to us", action: "lead", tag: "Specialized Training" }
+      ]
+    },
+    tr_campus: {
+      msg: "Campus Ambassador Program. Explore:",
+      options: [
+        { label: "How the program works", url: "esg-training.html#ambassador", tag: "Campus · How it works" },
+        { label: "What you get (cert + stipend)", url: "esg-training.html#ambassador", tag: "Campus · Benefits" },
+        { label: "📝 Apply now", action: "lead", tag: "Campus Ambassador" }
+      ]
+    },
+
+    /* ===== EPR — tabs (waste streams) ===== */
     epr: {
-      msg: "EPR compliance — what applies to you?",
+      msg: "EPR Compliance — which waste stream?",
       options: [
-        { label: "Plastic EPR", url: "epr-compliance.html#plastic", tag: "Plastic EPR" },
-        { label: "E-Waste / Battery / Tyre", url: "epr-compliance.html#ewaste", tag: "E-Waste/Battery/Tyre EPR" },
-        { label: "🧮 Check my penalty risk", url: "epr-compliance.html#calculator", tag: "EPR Calculator" },
-        { label: "Registration → Annual Filing", url: "epr-compliance.html", tag: "EPR Filing" },
-        { label: "🗓 Talk to an EPR expert", action: "lead", tag: "EPR - Expert" }
+        { label: "🧴 Plastic", goto: "epr_plastic" },
+        { label: "💻 E-Waste", goto: "epr_ewaste" },
+        { label: "🔋 Battery", goto: "epr_battery" },
+        { label: "🚗 Tyre", goto: "epr_tyre" },
+        { label: "🛢️ Used Oil", goto: "epr_oil" },
+        { label: "🚙 ELV", goto: "epr_elv" }
       ]
     },
-    msme: {
-      msg: "MSME support — where can we help?",
+    epr_plastic: {
+      msg: "Plastic EPR (PWM Rules 2022). What's included:",
       options: [
-        { label: "Supply-Chain Sustainability", url: "msme-support.html#supply-chain", tag: "SCM Sustainability" },
-        { label: "SCALE — Growth & Coaching", url: "msme-support.html#scale", tag: "SCALE" },
-        { label: "Franchising", url: "franchise.html", tag: "Franchise" },
-        { label: "🗓 Talk to us about growth", action: "lead", tag: "MSME - Growth" }
+        { label: "CPCB registration", url: "epr-compliance.html#plastic", tag: "Plastic EPR · Registration" },
+        { label: "Plastic credits (PlasticXChange)", url: "epr-compliance.html#plastic", tag: "Plastic EPR · Credits" },
+        { label: "Quarterly & annual returns", url: "epr-compliance.html#plastic", tag: "Plastic EPR · Returns" },
+        { label: "🧮 Check my penalty risk", url: "epr-compliance.html#calculator", tag: "Plastic EPR · Penalty check" },
+        { label: "📝 Talk to an EPR expert", action: "lead", tag: "Plastic EPR" }
+      ]
+    },
+    epr_ewaste: {
+      msg: "E-Waste EPR (E-Waste Rules 2022). What's included:",
+      options: [
+        { label: "Producer registration", url: "epr-compliance.html#ewaste", tag: "E-Waste EPR · Registration" },
+        { label: "EEE mapping & targets", url: "epr-compliance.html#ewaste", tag: "E-Waste EPR · Targets" },
+        { label: "Credits & dismantler network", url: "epr-compliance.html#ewaste", tag: "E-Waste EPR · Credits" },
+        { label: "Annual returns", url: "epr-compliance.html#ewaste", tag: "E-Waste EPR · Returns" },
+        { label: "📝 Talk to an EPR expert", action: "lead", tag: "E-Waste EPR" }
+      ]
+    },
+    epr_battery: {
+      msg: "Battery EPR (Battery Waste Rules 2022). What's included:",
+      options: [
+        { label: "Producer registration", url: "epr-compliance.html#battery", tag: "Battery EPR · Registration" },
+        { label: "Chemistry-wise obligations", url: "epr-compliance.html#battery", tag: "Battery EPR · Obligations" },
+        { label: "Battery EPR credits", url: "epr-compliance.html#battery", tag: "Battery EPR · Credits" },
+        { label: "Annual returns", url: "epr-compliance.html#battery", tag: "Battery EPR · Returns" },
+        { label: "📝 Talk to an EPR expert", action: "lead", tag: "Battery EPR" }
+      ]
+    },
+    epr_tyre: {
+      msg: "Tyre EPR (Waste Tyre Rules). What's included:",
+      options: [
+        { label: "Producer registration", url: "epr-compliance.html#tyre", tag: "Tyre EPR · Registration" },
+        { label: "Obligation & targets", url: "epr-compliance.html#tyre", tag: "Tyre EPR · Targets" },
+        { label: "Tyre EPR certificates", url: "epr-compliance.html#tyre", tag: "Tyre EPR · Certificates" },
+        { label: "Recycler / pyrolysis network", url: "epr-compliance.html#tyre", tag: "Tyre EPR · Network" },
+        { label: "📝 Talk to an EPR expert", action: "lead", tag: "Tyre EPR" }
+      ]
+    },
+    epr_oil: {
+      msg: "Used Oil EPR (Hazardous Waste Rules). What's included:",
+      options: [
+        { label: "Registration & authorisation", url: "epr-compliance.html#oil", tag: "Used Oil EPR · Registration" },
+        { label: "Collection mechanism setup", url: "epr-compliance.html#oil", tag: "Used Oil EPR · Collection" },
+        { label: "Re-refiner network", url: "epr-compliance.html#oil", tag: "Used Oil EPR · Network" },
+        { label: "📝 Talk to an EPR expert", action: "lead", tag: "Used Oil EPR" }
+      ]
+    },
+    epr_elv: {
+      msg: "ELV EPR (End-of-Life Vehicles). What's included:",
+      options: [
+        { label: "Producer registration", url: "epr-compliance.html#elv", tag: "ELV EPR · Registration" },
+        { label: "Dismantling network", url: "epr-compliance.html#elv", tag: "ELV EPR · Dismantling" },
+        { label: "Material recycling compliance", url: "epr-compliance.html#elv", tag: "ELV EPR · Recycling" },
+        { label: "📝 Talk to an EPR expert", action: "lead", tag: "ELV EPR" }
+      ]
+    },
+
+    /* ===== MSME — tabs ===== */
+    msme: {
+      msg: "MSME Support — pick a pillar:",
+      options: [
+        { label: "🔗 Supply-Chain Sustainability", goto: "msme_supply" },
+        { label: "🚀 SCALE — Growth & Coaching", goto: "msme_scale" },
+        { label: "🏢 Franchising", goto: "msme_franchise" }
+      ]
+    },
+    msme_supply: {
+      msg: "Supply-Chain Sustainability. What's included:",
+      options: [
+        { label: "OEM/customer ESG questionnaires", url: "msme-support.html#supply", tag: "SCM · Questionnaires" },
+        { label: "BRSR value-chain readiness", url: "msme-support.html#supply", tag: "SCM · BRSR value-chain" },
+        { label: "Safety/environment/risk compliance", url: "msme-support.html#supply", tag: "SCM · Compliance" },
+        { label: "Business-continuity planning", url: "msme-support.html#supply", tag: "SCM · BCP" },
+        { label: "📝 Get compliant — talk to us", action: "lead", tag: "Supply-Chain Sustainability" }
+      ]
+    },
+    msme_scale: {
+      msg: "SCALE — B2B sales growth for owners. Explore:",
+      options: [
+        { label: "₹99 Business Growth Workshop", url: "https://scale.proindia.net/register/", tag: "SCALE · ₹99 Workshop" },
+        { label: "Free 2-min sales audit", url: "https://scale.proindia.net/audit/", tag: "SCALE · Sales audit" },
+        { label: "6–12 month CEO coaching", url: "msme-support.html#scale", tag: "SCALE · CEO coaching" },
+        { label: "📝 Talk to us about growth", action: "lead", tag: "SCALE Growth" }
+      ]
+    },
+    msme_franchise: {
+      msg: "Pro India Franchising. What's included:",
+      options: [
+        { label: "State-level EPR/recycling business", url: "franchise.html", tag: "Franchise · Business" },
+        { label: "Playbook, training & network", url: "franchise.html", tag: "Franchise · Playbook" },
+        { label: "📝 Explore a franchise", action: "lead", tag: "Franchising" }
       ]
     }
   };
