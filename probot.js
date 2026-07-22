@@ -426,3 +426,36 @@
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", build);
   else build();
 })();
+
+/* ===== Engagement tracking -> dataLayer (feeds GTM / GA4 + lead scoring) ===== */
+(function () {
+  var w = window; w.dataLayer = w.dataLayer || [];
+  function push(ev, obj) { obj = obj || {}; obj.event = ev; w.dataLayer.push(obj); }
+  function service() {
+    var p = (location.pathname + location.hash).toLowerCase();
+    if (/epr-compliance/.test(p)) return 'EPR';
+    if (/esg-training/.test(p)) return 'TRG';
+    if (/msme-support/.test(p)) return 'MSME';
+    if (/esg-services/.test(p)) return 'ESG';
+    return 'GENERAL';
+  }
+  var svc = service();
+  var visits = 0;
+  try { visits = parseInt(localStorage.getItem('pi_visits') || '0', 10) + 1; localStorage.setItem('pi_visits', String(visits)); } catch (e) {}
+  push('pi_page_view', { pi_service: svc, pi_page: location.pathname, pi_visits: visits, pi_returning: visits > 1 });
+  var hit = {};
+  function onScroll() {
+    var h = document.documentElement, sh = h.scrollHeight - h.clientHeight; if (sh <= 0) return;
+    var pct = Math.round((h.scrollTop || document.body.scrollTop) / sh * 100);
+    [50, 90].forEach(function (m) { if (pct >= m && !hit[m]) { hit[m] = 1; push('pi_scroll', { pi_service: svc, pi_depth: m }); } });
+  }
+  w.addEventListener('scroll', onScroll, { passive: true });
+  [30, 90].forEach(function (s) { setTimeout(function () { push('pi_time', { pi_service: svc, pi_seconds: s }); }, s * 1000); });
+  document.addEventListener('click', function (e) {
+    var a = e.target && e.target.closest ? e.target.closest('a,button') : null; if (!a) return;
+    var t = (a.textContent || '').trim().slice(0, 40);
+    if (a.href && /wa\.me|whatsapp/i.test(a.href)) push('pi_whatsapp_click', { pi_service: svc, pi_label: t });
+    else if (a.hasAttribute('data-probot-open') || /chat with us/i.test(t)) push('pi_probot_open', { pi_service: svc });
+    else if ((a.className && /btn-primary|btn-accent/.test(a.className)) || /enrol|register|book|get compliant|get started|apply|talk to|free /i.test(t)) push('pi_cta_click', { pi_service: svc, pi_label: t });
+  }, true);
+})();
